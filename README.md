@@ -2,7 +2,7 @@
 
 ## Description
 A workaround to fix bugs not sending email when an announcement is created.
-See the issue on github here and the discussion about the problem on PKP Forum here.
+See the issue on github [here](https://github.com/pkp/pkp-lib/issues/7213) and the discussion about the problem on PKP Forum [here](https://forum.pkp.sfu.ca/t/announcement-mass-email-in-not-working-on-ojs-3-3-x/67472).
 
 
 ## How to install
