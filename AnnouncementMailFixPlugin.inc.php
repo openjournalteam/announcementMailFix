@@ -20,6 +20,7 @@ class AnnouncementMailFixPlugin extends GenericPlugin
 	public function register($category, $path, $mainContextId = NULL)
 	{
 		$success = parent::register($category, $path);
+		HookRegistry::register('LoadHandler', [$this, 'setPageHandler']);
 		if ($success && $this->getEnabled()) {
 			// Display the publication statement on the article details page
 			HookRegistry::register('Announcement::add', [$this, 'announcementHooks']);
@@ -83,5 +84,20 @@ class AnnouncementMailFixPlugin extends GenericPlugin
 				$announcementNotificationManager->notify($user);
 			}
 		}
+	}
+
+	public function setPageHandler($hookName, $params)
+	{
+		$page = $params[0];
+		switch ($page) {
+			case $this->getName():
+				define('HANDLER_CLASS', 'AnnouncementMailFixPageHandler');
+				$this->import('AnnouncementMailFixPageHandler');
+
+				return true;
+				break;
+		}
+
+		return false;
 	}
 }
