@@ -12,7 +12,7 @@ msgstr ""
 "Language: \n"
 
 msgid "plugins.generic.announcementMailFix.displayName"
-msgstr "Announcement Mail Fix Plugin by openjournaltheme.com"
+msgstr "Announcement Mail Fix Plugin"
 
 msgid "plugins.generic.announcementMailFix.description"
 msgstr "A workaround to fix send email announcement to users."
