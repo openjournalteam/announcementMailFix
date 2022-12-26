@@ -54,6 +54,7 @@ jobs:
       - name: Copy the version.xml file
         run: |
           cp -p ./version.xml ./zipped/version.xml
+          [ -f ./CHANGELOG.md ] && cp -p ./CHANGELOG.md ./zipped/CHANGELOG.md
 
       #everthing is working now, then upload
       - name: Upload Zip File to S3 Folder ( Version )
